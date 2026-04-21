@@ -1,0 +1,444 @@
+====================================================================================================
+FLIGHT TICKET PRICE PREDICTION - COMPLETE MACHINE LEARNING PROJECT
+====================================================================================================
+
+====================================================================================================
+1. DATA LOADING
+====================================================================================================
+Dataset loaded from: Dataset\Flight_dataset_4039.xlsx
+Dataset shape: 300153 rows, 12 columns
+Memory usage: 136.70 MB
+
+====================================================================================================
+2. DATA PREPROCESSING
+====================================================================================================
+Initial Columns:
+['Unnamed: 0', 'airline', 'flight', 'source_city', 'departure_time', 'stops', 'arrival_time', 'destination_city', 'class', 'duration', 'days_left', 'price']
+
+Data Types:
+Unnamed: 0            int64
+airline                 str
+flight               object
+source_city             str
+departure_time          str
+stops                   str
+arrival_time            str
+destination_city        str
+class                   str
+duration            float64
+days_left           float64
+price               float64
+dtype: object
+
+Duplicates removed: 0
+Shape after duplicate removal: (300153, 12)
+Columns dropped: ['Unnamed: 0', 'flight']
+
+Missing values before handling:
+duration     12
+days_left     5
+price         5
+dtype: int64
+
+Missing values after handling:
+No missing values remain.
+
+Final cleaned dataset shape: (300148, 10)
+
+====================================================================================================
+3. FEATURE ENGINEERING
+====================================================================================================
+Created route feature with 30 unique routes
+Created duration_minutes feature from duration
+Created booking_window_group feature from days_left
+
+Feature Engineering Summary:
+['route', 'duration_minutes', 'booking_window_group']
+====================================================================================================
+4. EXPLORATORY DATA ANALYSIS
+====================================================================================================, 'booking_window_group']
+Numerical features (4): ['duration', 'duration_minutes', 'days_left', 'price']
+
+----------------------------------------------------------------------------------------------------
+Summary Statistics
+----------------------------------------------------------------------------------------------------
+                     count          mean           std      min      25%      50%       75%        max
+duration          300148.0     12.221126      7.191809     0.83     6.83    11.25     16.17      49.83
+duration_minutes  300148.0    733.265339    431.507066    50.00   410.00   675.00    970.00    2990.00
+days_left         300148.0     26.005474     13.560474     1.00    15.00    26.00     38.00      49.00
+price             300148.0  20889.757586  22697.934166  1105.00  4783.00  7425.00  42521.00  123071.00
+
+====================================================================================================
+5. VISUALIZATIONS
+====================================================================================================
+Backend tkagg is interactive backend. Turning interactive mode on.
+PS C:\Users\Farid\Documents\VS Code\Machine-Learning-COM7022-> ^C
+PS C:\Users\Farid\Documents\VS Code\Machine-Learning-COM7022-> 
+PS C:\Users\Farid\Documents\VS Code\Machine-Learning-COM7022->  c:; cd 'c:\Users\Farid\Documents\VS Code\Machine-Learning-COM7022-'; & 'C:\Users\Farid\AppData\Local\Microsoft\WindowsApps\python3.13.exe' 'c:\Users\Farid\.vscode\extensions\ms-python.debugpy-2025.18.0-win32-x64\bundled\libs\debugpy\launcher' '6326' '--' 'C:\Users\Farid\Documents\VS Code\Machine-Learning-COM7022-\flight_price_prediction.py' 
+====================================================================================================
+FLIGHT TICKET PRICE PREDICTION - COMPLETE MACHINE LEARNING PROJECT
+====================================================================================================
+
+====================================================================================================
+1. DATA LOADING
+====================================================================================================
+Dataset loaded from: Dataset\Flight_dataset_4039.xlsx
+Dataset shape: 300153 rows, 12 columns
+Memory usage: 136.70 MB
+
+====================================================================================================
+2. DATA PREPROCESSING
+====================================================================================================
+Initial Columns:
+['Unnamed: 0', 'airline', 'flight', 'source_city', 'departure_time', 'stops', 'arrival_time', 'destination_city', 'class', 'duration', 'days_left', 'price']
+
+Data Types:
+Unnamed: 0            int64
+airline                 str
+flight               object
+source_city             str
+departure_time          str
+stops                   str
+arrival_time            str
+destination_city        str
+class                   str
+duration            float64
+days_left           float64
+price               float64
+dtype: object
+
+Duplicates removed: 0
+Shape after duplicate removal: (300153, 12)
+Columns dropped: ['Unnamed: 0', 'flight']
+
+Missing values before handling:
+duration     12
+days_left     5
+price         5
+dtype: int64
+
+Missing values after handling:
+No missing values remain.
+
+Final cleaned dataset shape: (300148, 10)
+
+====================================================================================================
+3. FEATURE ENGINEERING
+====================================================================================================
+Created route feature with 30 unique routes
+Created duration_minutes feature from duration
+Created booking_window_group feature from days_left
+
+Feature Engineering Summary:
+['route', 'duration_minutes', 'booking_window_group']
+
+====================================================================================================
+4. EXPLORATORY DATA ANALYSIS
+====================================================================================================
+Categorical features (9): ['airline', 'source_city', 'departure_time', 'stops', 'arrival_time', 'destination_city', 'class', 'route', 'booking_window_group']
+Numerical features (4): ['duration', 'duration_minutes', 'days_left', 'price']
+
+----------------------------------------------------------------------------------------------------
+Summary Statistics
+----------------------------------------------------------------------------------------------------
+                     count          mean           std      min      25%      50%       75%        max
+duration          300148.0     12.221126      7.191809     0.83     6.83    11.25     16.17      49.83
+duration_minutes  300148.0    733.265339    431.507066    50.00   410.00   675.00    970.00    2990.00
+days_left         300148.0     26.005474     13.560474     1.00    15.00    26.00     38.00      49.00
+price             300148.0  20889.757586  22697.934166  1105.00  4783.00  7425.00  42521.00  123071.00
+
+====================================================================================================
+5. VISUALIZATIONS
+====================================================================================================
+[X] Saved plot: outputs\plots\01_price_distribution_histogram.png
+[X] Saved plot: outputs\plots\02_price_by_airline_boxplot.png
+[X] Saved plot: outputs\plots\03_price_by_class_boxplot.png
+[X] Saved plot: outputs\plots\04_price_by_stops_boxplot.png
+[X] Saved plot: outputs\plots\05_duration_vs_price_scatter.png
+[X] Saved plot: outputs\plots\06_days_left_vs_price_scatter.png
+[X] Saved plot: outputs\plots\07_average_price_by_airline_bar.png
+[X] Saved plot: outputs\plots\08_average_price_by_class_bar.png
+[X] Saved plot: outputs\plots\09_average_price_by_stops_bar.png
+[X] Saved plot: outputs\plots\10_price_by_source_city_boxplot.png
+[X] Saved plot: outputs\plots\11_price_by_destination_city_boxplot.png
+[X] Saved plot: outputs\plots\12_price_by_departure_time_boxplot.png
+[X] Saved plot: outputs\plots\13_price_by_arrival_time_boxplot.png
+[X] Saved plot: outputs\plots\14_price_by_route_top15_boxplot.png
+[X] Saved plot: outputs\plots\15_correlation_heatmap.png
+
+====================================================================================================
+6. STATISTICAL HYPOTHESIS TESTING
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Hypothesis Test 1: ANOVA - Price Across Airlines
+----------------------------------------------------------------------------------------------------
+H0: Average ticket price is the same across all airlines
+H1: At least one airline has a significantly different average price
+F-statistic: 17194.3209
+P-value    : 0.000000e+00
+Decision   : Reject H0
+
+----------------------------------------------------------------------------------------------------
+Hypothesis Test 2: T-Test - Business vs Economy
+----------------------------------------------------------------------------------------------------
+H0: Business and Economy have the same average price
+H1: Business and Economy have different average prices
+T-statistic: 1063.8518
+P-value    : 0.000000e+00
+Decision   : Reject H0
+
+----------------------------------------------------------------------------------------------------
+Hypothesis Test 3: ANOVA - Price Across Departure Time
+----------------------------------------------------------------------------------------------------
+H0: Average ticket price is the same across all departure times
+H1: At least one departure time group has a different average price
+F-statistic: 319.2072
+P-value    : 0.000000e+00
+Decision   : Reject H0
+
+----------------------------------------------------------------------------------------------------
+Hypothesis Test 4: ANOVA - Price Across Routes
+----------------------------------------------------------------------------------------------------
+H0: Average ticket price is the same across all routes
+H1: At least one route has a different average price
+F-statistic: 86.1784
+P-value    : 0.000000e+00
+Decision   : Reject H0
+
+====================================================================================================
+7. JUSTIFICATION OF INDEPENDENT VARIABLES
+====================================================================================================
+- airline: Different airlines follow different pricing strategies, service levels, and brand positioning.
+- source_city: Origin city influences demand patterns, airport traffic, and fare levels.
+- departure_time: Departure timing affects convenience and demand, which can change ticket prices.
+- stops: Flights with fewer stops are often more convenient and may command premium pricing.
+- arrival_time: Arrival timing may affect customer preference and route attractiveness.
+- destination_city: Destination city reflects route demand, market competition, and regional pricing differences.
+- class: Business and Economy classes have fundamentally different pricing structures.
+- duration: Longer or shorter travel duration can indicate route convenience and service quality.
+- duration_minutes: Provides a more granular numerical representation of travel duration.
+- days_left: Booking lead time is strongly linked to fare fluctuation and revenue management strategy.
+- route: The source-destination combination directly captures route-specific pricing behavior.
+
+Dropped / Excluded Variables Justification:
+- flight: Dropped because flight identifier behaves like an ID and may not generalize well.
+- Unnamed: 0: Dropped because it is only an index column and has no predictive meaning.
+
+====================================================================================================
+8. ENCODING AND MODEL PREPARATION
+====================================================================================================
+[X] Encoded airline -> airline_encoded (6 classes)
+[X] Encoded source_city -> source_city_encoded (6 classes)
+[X] Encoded departure_time -> departure_time_encoded (6 classes)
+[X] Encoded stops -> stops_encoded (3 classes)
+[X] Encoded arrival_time -> arrival_time_encoded (6 classes)
+[X] Encoded destination_city -> destination_city_encoded (6 classes)
+[X] Encoded class -> class_encoded (2 classes)
+[X] Encoded route -> route_encoded (30 classes)
+[X] Encoded booking_window_group -> booking_window_group_encoded (5 classes)
+
+Selected feature columns (12):
+['airline_encoded', 'source_city_encoded', 'departure_time_encoded', 'stops_encoded', 'arrival_time_encoded', 'destination_city_encoded', 'class_encoded', 'route_encoded', 'booking_window_group_encoded', 'duration', 'duration_minutes', 'days_left']
+Feature matrix shape: (300148, 12)
+Target shape: (300148,)
+
+====================================================================================================
+9. TRAIN-TEST SPLIT AND SCALING
+====================================================================================================
+Training samples: 210103
+Testing samples : 90045
+StandardScaler applied for linear-based models
+
+====================================================================================================
+10. MODEL 1 - LINEAR REGRESSION
+====================================================================================================
+
+Linear Regression Performance:
+   Train R²     : 0.9067
+   Test R²      : 0.9067
+   Train RMSE   : ₹6931.94
+   Test RMSE    : ₹6934.44
+   Train MAE    : ₹4534.36
+   Test MAE     : ₹4514.55
+   Train MAPE   : 0.4207 (42.07%)
+   Test MAPE    : 0.4194 (41.94%)
+   Train RMSLE  : 1.8988
+   Test RMSLE   : 1.8969
+
+Top 10 Linear Regression Coefficients:
+                     Feature    Coefficient  Abs_Coefficient
+                    duration  115851.041256    115851.041256
+            duration_minutes -115222.644013    115222.644013
+               class_encoded  -20627.063024     20627.063024
+               stops_encoded   -2216.773770      2216.773770
+               route_encoded    1951.629548      1951.629548
+         source_city_encoded   -1817.281051      1817.281051
+             airline_encoded    1736.554837      1736.554837
+                   days_left   -1256.797045      1256.797045
+booking_window_group_encoded    1157.632517      1157.632517
+        arrival_time_encoded     327.729528       327.729528
+
+====================================================================================================
+11. MODEL 2 - RIDGE REGRESSION
+====================================================================================================
+
+Ridge Regression Performance:
+   Train R²     : 0.9067
+   Test R²      : 0.9067
+   Train RMSE   : ₹6932.07
+   Test RMSE    : ₹6934.63
+   Train MAE    : ₹4534.33
+   Test MAE     : ₹4514.43
+   Train MAPE   : 0.4207 (42.07%)
+   Test MAPE    : 0.4194 (41.94%)
+   Train RMSLE  : 1.8988
+   Test RMSLE   : 1.8966
+
+====================================================================================================
+12. MODEL 3 - LASSO REGRESSION
+====================================================================================================
+
+Lasso Regression Performance:
+   Train R²     : 0.9067
+   Test R²      : 0.9067
+   Train RMSE   : ₹6932.08
+   Test RMSE    : ₹6934.59
+   Train MAE    : ₹4534.27
+   Test MAE     : ₹4514.31
+   Train MAPE   : 0.4207 (42.07%)
+   Test MAPE    : 0.4194 (41.94%)
+   Train RMSLE  : 1.8990
+   Test RMSLE   : 1.8968
+
+====================================================================================================
+13. MODEL 4 - RANDOM FOREST REGRESSOR
+====================================================================================================
+
+Random Forest Regressor Performance:
+   Train R²     : 0.9924
+   Test R²      : 0.9852
+   Train RMSE   : ₹1983.78
+   Test RMSE    : ₹2758.94
+   Train MAE    : ₹918.30
+   Test MAE     : ₹1243.80
+   Train MAPE   : 0.0665 (6.65%)
+   Test MAPE    : 0.0880 (8.80%)
+   Train RMSLE  : 0.1109
+   Test RMSLE   : 0.1494
+
+Top 10 Random Forest Feature Importances:
+                 Feature  Importance
+           class_encoded    0.886119
+        duration_minutes    0.029570
+                duration    0.027489
+               days_left    0.014476
+           route_encoded    0.010932
+         airline_encoded    0.010731
+destination_city_encoded    0.006807
+    arrival_time_encoded    0.003884
+  departure_time_encoded    0.003658
+     source_city_encoded    0.003468
+
+====================================================================================================
+14. MODEL COMPARISON
+====================================================================================================
+                  Model  Train_R2  Test_R2  Train_RMSE   Test_RMSE   Train_MAE    Test_MAE  Train_MAPE  Test_MAPE  Train_RMSLE  Test_RMSLE
+      Linear Regression  0.906720 0.906688 6931.935918 6934.441434 4534.355281 4514.549219    0.420741   0.419395     1.898760    1.896887
+       Ridge Regression  0.906717 0.906683 6932.067742 6934.630938 4534.331921 4514.434413    0.420743   0.419372     1.898758    1.896600
+       Lasso Regression  0.906716 0.906684 6932.076085 6934.590876 4534.274323 4514.309793    0.420735   0.419358     1.899049    1.896766
+Random Forest Regressor  0.992360 0.985229 1983.782943 2758.944620  918.299312 1243.795428    0.066502   0.087977     0.110871    0.149362
+
+[X] Saved table: outputs\tables\model_performance_summary.csv
+
+Selected Best Model: Random Forest Regressor
+Selection basis: Highest Test R² and lower error values on unseen data.
+
+====================================================================================================
+15. MODEL DIAGNOSTIC PLOTS
+====================================================================================================
+[X] Saved plot: outputs\plots\16_linear_regression_actual_vs_predicted.png
+[X] Saved plot: outputs\plots\17_linear_regression_residuals.png
+[X] Saved plot: outputs\plots\18_linear_regression_feature_importance.png
+[X] Saved plot: outputs\plots\19_ridge_actual_vs_predicted.png
+[X] Saved plot: outputs\plots\20_lasso_actual_vs_predicted.png
+[X] Saved plot: outputs\plots\21_random_forest_actual_vs_predicted.png
+[X] Saved plot: outputs\plots\22_random_forest_residuals.png
+[X] Saved plot: outputs\plots\23_random_forest_feature_importance.png
+
+====================================================================================================
+16. REGRESSION COEFFICIENT INTERPRETATION
+====================================================================================================
+Linear Regression Intercept: ₹20896.48
+
+Top coefficient interpretations:
+- duration: A one-unit increase is associated with a increases of ₹115851.04 in predicted price (holding other variables constant).
+- duration_minutes: A one-unit increase is associated with a decreases of ₹115222.64 in predicted price (holding other variables constant).
+- class_encoded: A one-unit increase is associated with a decreases of ₹20627.06 in predicted price (holding other variables constant).
+- stops_encoded: A one-unit increase is associated with a decreases of ₹2216.77 in predicted price (holding other variables constant).
+- route_encoded: A one-unit increase is associated with a increases of ₹1951.63 in predicted price (holding other variables constant).
+- source_city_encoded: A one-unit increase is associated with a decreases of ₹1817.28 in predicted price (holding other variables constant).
+- airline_encoded: A one-unit increase is associated with a increases of ₹1736.55 in predicted price (holding other variables constant).
+- days_left: A one-unit increase is associated with a decreases of ₹1256.80 in predicted price (holding other variables constant).
+- booking_window_group_encoded: A one-unit increase is associated with a increases of ₹1157.63 in predicted price (holding other variables constant).
+- arrival_time_encoded: A one-unit increase is associated with a increases of ₹327.73 in predicted price (holding other variables constant).
+
+Important Note:
+For label-encoded categorical features, coefficient interpretation should be treated cautiously.
+One-Hot Encoding would provide more statistically interpretable coefficients for purely nominal variables.
+
+====================================================================================================
+17. KEY FINDINGS
+====================================================================================================
+
+1. Dataset contains 300,148 cleaned samples.
+2. Price range: ₹1105 to ₹123071
+3. Most expensive airline on average: Vistara
+4. Most economical airline on average: AirAsia
+5. Business average price: ₹52540.08
+6. Economy average price: ₹6572.14
+7. Duration-Price correlation: 0.2042
+8. DaysLeft-Price correlation: -0.0920
+9. Best selected model: Random Forest Regressor
+10. The selected model explains approximately 98.52% of the variance in ticket prices on test data.
+
+Interpretive Summary:
+- Ticket prices vary significantly across airlines, routes, class types, and departure timings.
+- Booking lead time is an important pricing driver and reflects airline revenue management behavior.
+- Travel class is one of the strongest determinants of airfare level.
+- Route-specific behavior matters; therefore, including route improves predictive context.
+- Random Forest often performs better because airfare pricing patterns are not purely linear.
+
+====================================================================================================
+18. LIMITATIONS AND FUTURE IMPROVEMENTS
+====================================================================================================
+
+LIMITATIONS:
+1. Label encoding of nominal categorical variables may reduce interpretability for linear models.
+2. Seasonal effects, holidays, demand shocks, and fuel prices are not included.
+3. The model assumes that historical relationships remain stable over time.
+4. Airline pricing is dynamic and may change with external market conditions.
+5. Some route/time interactions may be non-linear and only partially captured.
+
+SUGGESTED IMPROVEMENTS:
+1. Use One-Hot Encoding for linear regression models.
+2. Apply cross-validation and hyperparameter tuning.
+3. Add calendar variables such as month, weekday, holiday period, and festival season.
+4. Introduce route distance if available from external sources.
+5. Test additional models such as XGBoost, Gradient Boosting, and ElasticNet.
+
+
+====================================================================================================
+19. SAVING IMPORTANT OUTPUT TABLES
+====================================================================================================
+[X] Saved table: outputs\tables\linear_regression_coefficients.csv
+[X] Saved table: outputs\tables\random_forest_feature_importance.csv
+[X] Saved table: outputs\tables\correlation_matrix.csv
+
+====================================================================================================
+20. ANALYSIS COMPLETE
+====================================================================================================
+All requested processing, hypothesis testing, regression modeling, evaluation, and separate plot saving are complete.
+Plots saved in : outputs\plots
+Tables saved in: outputs\tables
+====================================================================================================
