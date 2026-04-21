@@ -1,6 +1,6 @@
-# Flight Ticket Price Prediction - Machine Learning Project
+#  Machine Learning Project: Flight Ticket Price Prediction
 
-**Arden University | Module: COM7022 Machine Learning | Assessment: Practical Project (4039)**
+**Arden University | Module: COM7022 Machine Learning**
 
 ## 📋 Project Overview
 
@@ -68,7 +68,7 @@ This project implements a comprehensive machine learning solution to predict air
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/flight-price-prediction.git
+git clone https://github.com/Farid89-data/Machine-Learning-COM7022-.git
 cd flight-price-prediction
 ```
 
@@ -440,10 +440,9 @@ Unauthorized copying or distribution without permission is prohibited.
 
 ## ✉️ Contact & Support
 
-**Project Author**: [Student ID: 4039]  
-**Module Tutor**: [Your Tutor Name]  
+**Project Author**: Farid Negahbani (SID:24154844) 
+**Module Tutor**: Mohammad Amin Mohammadi Banadaki
 **University**: Arden University  
-**Submission Date**: [Date]
 
 For questions or support:
 1. Check the Issues section in the repository
@@ -460,7 +459,4 @@ For questions or support:
 - **Pandas/NumPy teams** for data science libraries
 
 ---
-
-**Last Updated**: December 2024  
-**Status**: Active Development  
 **Version**: 1.0.0
