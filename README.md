@@ -68,7 +68,7 @@ This project implements a comprehensive machine learning solution to predict air
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/flight-price-prediction.git
+git clone https://github.com/Farid89-data/Machine-Learning-COM7022-.git
 cd flight-price-prediction
 ```
 
