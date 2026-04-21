@@ -1,4 +1,4 @@
-# Flight Ticket Price Prediction - Machine Learning Project
+#  Machine Learning Project: Flight Ticket Price Prediction
 
 **Arden University | Module: COM7022 Machine Learning**
 
