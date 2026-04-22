@@ -10,7 +10,7 @@ This script:
 4. Saves each visualization as a separate image
 5. Provides interpretable outputs for academic reporting
 
-Author: [Student ID: 4039]
+Author: Farid Negahbani (SID:24154844)
 """
 
 import os
